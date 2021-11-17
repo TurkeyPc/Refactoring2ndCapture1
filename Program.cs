@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text.Json;
 
 namespace Refactoring2ndCapture1 {
-    class Program {
+    public class Program {
         static void Main(string[] args) {
             var plays = JsonSerializer.Deserialize<Dictionary<string, play>>(Properties.Resources.plays);
             var invoices = JsonSerializer.Deserialize<List<invoice>>(Properties.Resources.invoices);
@@ -13,7 +13,7 @@ namespace Refactoring2ndCapture1 {
             }
         }
 
-        static string statement(invoice invoice, Dictionary<string, play> plays) {
+        public static string statement(invoice invoice, Dictionary<string, play> plays) {
             int totalAmount = 0;
             int volumeCredits = 0;
             string result = $"Statement for {invoice.customer}\n";
